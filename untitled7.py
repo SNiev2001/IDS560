@@ -12,7 +12,10 @@ st.set_page_config(page_title="YouTube Trending Analysis", layout="wide")
 
 # Load Data
 @st.cache_data
-df = pd.read_parquet("data.parquet")
+def load_data():
+    return pd.read_parquet("data.parquet")
+
+df = load_data()
 
 # Sidebar Navigation
 st.sidebar.image("https://www.example.com/sample-logo.png", use_container_width=True)
